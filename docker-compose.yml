@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+
+  nxs:
+    # image: node:12.3-alpine
+    build: "."
+    # command: sh -c "npm start"
+    environment:
+      - NODE_ENV=development
+      - PORT=8001
+    ports:
+      - "8001:8001"
+    # working_dir: /root/noddyx-server
+    # volumes:
+    #  - ./:/home/node/app:cached

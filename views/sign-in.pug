@@ -1,0 +1,15 @@
+head
+  title Explore: Noddyx Server Auth 
+  link(rel='stylesheet' href='./css/style-node-nxs.css')
+h1#title Sign in:
+form#signInForm
+  p
+    | Email: 
+    input#username(autocomplete='email' type='email' inputmode='email' value='a@b.com')
+  p
+    | Password: 
+    input#password(type='password' value='asdf')
+  p
+    input(type='submit' value='Sign me in')
+  #divSignInError
+script(type='text/javascript' src='./js/sign-in.js')
