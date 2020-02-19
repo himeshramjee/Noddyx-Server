@@ -8,9 +8,6 @@ services:
     # command: sh -c "npm start"
     environment:
       - NODE_ENV=development
-      - PORT=8001
+      - PORT=8002
     ports:
-      - "8001:8001"
-    # working_dir: /root/noddyx-server
-    # volumes:
-    #  - ./:/home/node/app:cached
+      - "8002:8002"

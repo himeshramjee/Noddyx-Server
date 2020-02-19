@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:express": "node ./bin/www",
+    "start": "nodemon ./app"
   },
   "dependencies": {
     "express": "^4.17.1",
     "morgan": "^1.9.1",
-    "nodemon": "^2.0.2",
     "dotenv": "^8.2.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
@@ -23,6 +24,12 @@
   },
   "devDependencies": {
     "express-generator": "^4.16.1",
-    "debug": "^2.6.9"
+    "debug": "^2.6.9",
+    "nodemon": "^2.0.2"
+  },
+  "nodemonConfig": {
+    "ext": "js,mjs,json,pug",
+    "verbose": "true",
+    "delay": "30"
   }
 }

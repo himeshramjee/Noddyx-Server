@@ -22,7 +22,7 @@ RUN npm install
 COPY --chown=node:node . .
 
 # TODO: This doesn't actually publish but just documents intent :S.
-EXPOSE 8001
+# EXPOSE 8002
 
 # ENTRYPOINT ["/bin/bash"]
 # CMD ["nodemon", "./bin/www"]
