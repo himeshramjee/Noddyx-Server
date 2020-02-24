@@ -1,41 +1,46 @@
 const registerHimesh = (e) => {
     e.preventDefault();
-  
+
+    const resultRegisterHimesh = document.getElementById('resultRegisterHimesh');
+    resultRegisterHimesh.innerHTML = "Processing...";
+
     const name = document.getElementById('register_name').value;
+    const familyName = document.getElementById('register_familyName').value;
     const email = document.getElementById('register_email').value;
-    const passwd = document.getElementById('register_password').value;
+    // const passwd = document.getElementById('register_password').value;
     const options = {
       method: 'POST',
-      body: JSON.stringify({ name, email, passwd }),
+      body: JSON.stringify({ name, familyName, email }), //, passwd }),
       headers: new Headers({ 'Content-Type': 'application/json' })
     }
-  
-    const resultRegisterHimesh = document.getElementById('resultRegisterHimesh');
-  
+
     fetch('/auth/register', options)
       .then(res => res.json())
       .then (({ authResponse }) => {
         if (!authResponse) {
-          console.log("Failed to get an auth result.");
+          resultRegisterHimesh.innerHTML = 'No response!? Error msg: ' + err.message;
         } else {
           if (authResponse.resultCode === 0) {
-            console.log("AuthN success");
+            resultRegisterHimesh.innerHTML = "Result: Thanks for registering!";
           } else {
-            console.log("AuthN failed.");
+            resultRegisterHimesh.innerHTML = "Result: Sorry your registration failed. Try again later.";
           }
+          console.log(authResponse);
         }
       })
       .catch(err => {
-        console.log(err);
         resultRegisterHimesh.innerHTML = 'Eina! Error msg: ' + err.message;
       })
   }
 
-document.getElementById('submitRegisterHimesh').addEventListener('submit', registerHimesh);
+document.getElementById('submitRegisterHimesh').addEventListener('click', registerHimesh);
 
 const signInHimesh = (e) => {
     e.preventDefault();
   
+    const resultLoginHimesh = document.getElementById('resultLoginHimesh');
+    resultLoginHimesh.innerHTML = "Processing...";
+
     const email = document.getElementById('signin_email').value;
     const passwd = document.getElementById('signin_password').value;
     const options = {
@@ -44,18 +49,16 @@ const signInHimesh = (e) => {
       headers: new Headers({ 'Content-Type': 'application/json' })
     }
   
-    const resultLoginHimesh = document.getElementById('resultLoginHimesh');
-  
     fetch('/auth/login', options)
       .then(res => res.json())
       .then (({ authResponse }) => {
         if (!authResponse) {
-          console.log("Failed to get an auth result.");
+          resultLoginHimesh.innerHTML = 'No response!? Error msg: ' + err.message;
         } else {
           if (authResponse.resultCode === 0) {
-            console.log("AuthN success");
+            resultLoginHimesh.innerHTML = "Result: You're signed in. Welcome!";
           } else {
-            console.log("AuthN failed.");
+            resultLoginHimesh.innerHTML = "Result: Invalid username or password.";
           }
         }
       })
@@ -65,32 +68,31 @@ const signInHimesh = (e) => {
       })
   }
 
-document.getElementById('submitLoginHimesh').addEventListener('submit', signInHimesh);
-
-
+document.getElementById('submitLoginHimesh').addEventListener('click', signInHimesh);
 
 const validateHimeshsToken = (e) => {
     e.preventDefault();
-  
+    
+    const resultValidateHimeshsToken = document.getElementById('resultValidateHimeshsToken');
+    resultValidateHimeshsToken.innerHTML = "Processing...";
+
     const token = document.getElementById('validatetoken_token').value;
     const options = {
       method: 'POST',
       body: JSON.stringify({ token }),
       headers: new Headers({ 'Content-Type': 'application/json' })
     }
-  
-    const resultValidateHimeshsToken = document.getElementById('resultValidateHimeshsToken');
-  
+
     fetch('/auth/validate', options)
       .then(res => res.json())
       .then (({ authResponse }) => {
         if (!authResponse) {
-          console.log("Failed to get an auth result.");
+          resultValidateHimeshsToken.innerHTML = 'No response!? Error msg: ' + err.message;
         } else {
           if (authResponse.resultCode === 0) {
-            console.log("AuthN success");
+            resultValidateHimeshsToken.innerHTML = "Result: Token is valid.";
           } else {
-            console.log("AuthN failed.");
+            resultValidateHimeshsToken.innerHTML = "Result: Token is invalid.";
           }
         }
       })
@@ -100,4 +102,4 @@ const validateHimeshsToken = (e) => {
       })
   }
 
-document.getElementById('submitValidateHimeshToken').addEventListener('submit', validateHimeshsToken);
+document.getElementById('submitValidateHimeshToken').addEventListener('click', validateHimeshsToken);

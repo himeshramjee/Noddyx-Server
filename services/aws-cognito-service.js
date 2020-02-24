@@ -8,20 +8,22 @@ global.fetch = require('node-fetch');
 
 const poolData = {    
     UserPoolId : process.env.awsCognitoPoolId, // Your user pool id here    
-    ClientId : process.env.awsCognitoAppClientNoddyAuthClientId // Your client id here
+    ClientId : process.env.awsCognitoAppClientNoddyAuthJSClientId // Your client id here
 };
 
 const poolRegion = process.env.awsCognitoPoolRegion;
 
 const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
-const himeshRefreshToken = '';
+var himeshRefreshToken = '';
 
-function RegisterUserHimesh(){
+// function RegisterUserHimesh(){
+exports.RegisterUserHimesh = function (requestBody, callback) {
     var attributeList = [];
     attributeList.push(new AmazonCognitoIdentity.CognitoUserAttribute( { Name:"name", Value:"Himesh" } ));
+    attributeList.push(new AmazonCognitoIdentity.CognitoUserAttribute( { Name:"family_name", Value:"Ramjee" } ));
     attributeList.push(new AmazonCognitoIdentity.CognitoUserAttribute( { Name:"email", Value:"himesh@ramjee.co.za" } ));
-    attributeList.push(new AmazonCognitoIdentity.CognitoUserAttribute( { Name:"custom:scope", Value:"admin" } ));
+    // attributeList.push(new AmazonCognitoIdentity.CognitoUserAttribute( { Name:"custom:scope", Value:"admin" } ));
 
     userPool.signUp('himesh@ramjee.co.za', 'P@ssw0rd017', attributeList, null, function(err, result){
         if (err) {
@@ -34,7 +36,7 @@ function RegisterUserHimesh(){
     });
 }
 
-function LoginHimesh() {
+exports.LoginHimesh = function (requestBody, callback) {
     var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails({
         Username : 'himesh@ramjee.co.za',
         Password : 'P@ssw0rd017',
@@ -95,7 +97,7 @@ function updateHimesh(username, password){
     });
 }
 
-function ValidateToken(token) {
+exports.ValidateToken = function (token, callback) {
     request({
         url: `https://cognito-idp.${poolRegion}.amazonaws.com/${poolData.UserPoolId}/.well-known/jwks.json`,
         json: true

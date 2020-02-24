@@ -11,3 +11,6 @@ services:
       - PORT=8002
     ports:
       - "8002:8002"
+    # working_dir: /home/node/app
+    # volumes:
+    #  - ./:/home/node/app:cached
