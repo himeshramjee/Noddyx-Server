@@ -17,15 +17,16 @@ const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
 var himeshRefreshToken = '';
 
-// function RegisterUserHimesh(){
-exports.RegisterUserHimesh = function (requestBody, callback) {
+// function RegisterUser(){
+exports.RegisterUser = function (requestBody, callback) {
     var attributeList = [];
-    attributeList.push(new AmazonCognitoIdentity.CognitoUserAttribute( { Name:"name", Value:"Himesh" } ));
-    attributeList.push(new AmazonCognitoIdentity.CognitoUserAttribute( { Name:"family_name", Value:"Ramjee" } ));
-    attributeList.push(new AmazonCognitoIdentity.CognitoUserAttribute( { Name:"email", Value:"himesh@ramjee.co.za" } ));
+    attributeList.push(new AmazonCognitoIdentity.CognitoUserAttribute( { Name:"name", Value:requestBody.name } ));
+    attributeList.push(new AmazonCognitoIdentity.CognitoUserAttribute( { Name:"family_name", Value:requestBody.familyName } ));
+    // attributeList.push(new AmazonCognitoIdentity.CognitoUserAttribute( { Name:"email", Value:requestBody.email } ));
+    // attributeList.push(new AmazonCognitoIdentity.CognitoUserAttribute( { Name:"password", Value:requestBody.password } ));
     // attributeList.push(new AmazonCognitoIdentity.CognitoUserAttribute( { Name:"custom:scope", Value:"admin" } ));
 
-    userPool.signUp('himesh@ramjee.co.za', 'P@ssw0rd017', attributeList, null, function(err, result){
+    userPool.signUp(requestBody.email, requestBody.password, attributeList, null, function(err, result){
         if (err) {
             console.log("Failed to register user...");
             console.log(err);
@@ -36,14 +37,14 @@ exports.RegisterUserHimesh = function (requestBody, callback) {
     });
 }
 
-exports.LoginHimesh = function (requestBody, callback) {
+exports.Login = function (requestBody, callback) {
     var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails({
-        Username : 'himesh@ramjee.co.za',
-        Password : 'P@ssw0rd017',
+        Username : requestBody.email, 
+        Password : requestBody.password
     });
 
     var userData = {
-        Username : 'himesh@ramjee.co.za',
+        Username : requestBody.email, 
         Pool : userPool
     };
 
@@ -77,12 +78,12 @@ function updateHimesh(username, password){
     }));
 
     var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails({
-        Username: 'himesh@ramjee.co.za',
-        Password: 'P@ssw0rd017',
+        Username : requestBody.email, 
+        Password : requestBody.password
     });
 
     var userData = {
-        Username: 'himesh@ramjee.co.za',
+        Username : requestBody.email, 
         Pool: userPool
     };
     var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
@@ -147,7 +148,7 @@ function renew() {
     const RefreshToken = new AmazonCognitoIdentity.CognitoRefreshToken({RefreshToken: himeshRefreshToken});
 
     var userData = {
-        Username: 'himesh@ramjee.co.za',
+        Username : requestBody.email,
         Pool: userPool
     };
     var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
@@ -173,12 +174,12 @@ function deleteAttributes(username, password){
     attributeList.push("custom:scope");
 
     var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails({
-        Username: 'himesh@ramjee.co.za',
-        Password: 'P@ssw0rd017',
+        Username : requestBody.email, 
+        Password : requestBody.password
     });
 
     var userData = {
-        Username: 'himesh@ramjee.co.za',
+        Username : requestBody.email, 
         Pool: userPool
     };
     var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
@@ -195,12 +196,12 @@ function deleteAttributes(username, password){
 
 function ChangePassword(username, password, newpassword) {
     var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails({
-        Username: 'himesh@ramjee.co.za',
-        Password: 'P@ssw0rd017',
+        Username : requestBody.email, 
+        Password : requestBody.password
     });
 
     var userData = {
-        Username: 'himesh@ramjee.co.za',
+        Username : requestBody.email, 
         Pool: userPool
     };
     var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
@@ -226,12 +227,12 @@ function ChangePassword(username, password, newpassword) {
 function DeleteUser() {
     
     var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails({
-        Username: 'himesh@ramjee.co.za',
-        Password: 'P@ssw0rd017',
+        Username : requestBody.email, 
+        Password : requestBody.password
     });
 
     var userData = {
-        Username: 'himesh@ramjee.co.za',
+        Username : requestBody.email, 
         Pool: userPool
     };
     var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);

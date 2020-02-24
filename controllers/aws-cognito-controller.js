@@ -1,7 +1,7 @@
 const authService = require('../services/aws-cognito-service');
 
-exports.registerHimesh = function(req, res){
-    let register = authService.RegisterUserHimesh(req.body, function(err, result){
+exports.register = function(req, res){
+    let register = authService.RegisterUser(req.body, function(err, result){
     if (err) {
         res.send(err);
     } else {
@@ -10,8 +10,8 @@ exports.registerHimesh = function(req, res){
   })
 }
 
-exports.loginHimesh = function(req, res){
-    let login = authService.LoginHimesh(req.body, function(err, result){
+exports.login = function(req, res){
+    let login = authService.Login(req.body, function(err, result){
         if (err) {
             res.send(err);
         } else {

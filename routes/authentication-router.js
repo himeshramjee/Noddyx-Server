@@ -6,8 +6,8 @@ router.get('/', function(req, res) {
     res.render('authenticate');
 });
 
-router.post('/register', authController.registerHimesh);
-router.post('/login', authController.loginHimesh);
+router.post('/register', authController.register);
+router.post('/login', authController.login);
 router.post('/validate', authController.validate_token);
 
 module.exports = router;

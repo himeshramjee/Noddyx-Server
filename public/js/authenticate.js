@@ -1,16 +1,16 @@
-const registerHimesh = (e) => {
+const register = (e) => {
     e.preventDefault();
 
-    const resultRegisterHimesh = document.getElementById('resultRegisterHimesh');
-    resultRegisterHimesh.innerHTML = "Processing...";
+    const resultRegister = document.getElementById('resultRegister');
+    resultRegister.innerHTML = "Processing...";
 
     const name = document.getElementById('register_name').value;
     const familyName = document.getElementById('register_familyName').value;
     const email = document.getElementById('register_email').value;
-    // const passwd = document.getElementById('register_password').value;
+    const password = document.getElementById('register_password').value;
     const options = {
       method: 'POST',
-      body: JSON.stringify({ name, familyName, email }), //, passwd }),
+      body: JSON.stringify({ name, familyName, email , password }),
       headers: new Headers({ 'Content-Type': 'application/json' })
     }
 
@@ -18,34 +18,34 @@ const registerHimesh = (e) => {
       .then(res => res.json())
       .then (({ authResponse }) => {
         if (!authResponse) {
-          resultRegisterHimesh.innerHTML = 'No response!? Error msg: ' + err.message;
+          resultRegister.innerHTML = 'No response!? Error msg: ' + err.message;
         } else {
           if (authResponse.resultCode === 0) {
-            resultRegisterHimesh.innerHTML = "Result: Thanks for registering!";
+            resultRegister.innerHTML = "Result: Thanks for registering!";
           } else {
-            resultRegisterHimesh.innerHTML = "Result: Sorry your registration failed. Try again later.";
+            resultRegister.innerHTML = "Result: Sorry your registration failed. Try again later.";
           }
           console.log(authResponse);
         }
       })
       .catch(err => {
-        resultRegisterHimesh.innerHTML = 'Eina! Error msg: ' + err.message;
+        resultRegister.innerHTML = 'Eina! Error msg: ' + err.message;
       })
   }
 
-document.getElementById('submitRegisterHimesh').addEventListener('click', registerHimesh);
+document.getElementById('submitRegister').addEventListener('click', register);
 
-const signInHimesh = (e) => {
+const signIn = (e) => {
     e.preventDefault();
   
-    const resultLoginHimesh = document.getElementById('resultLoginHimesh');
-    resultLoginHimesh.innerHTML = "Processing...";
+    const resultLogin = document.getElementById('resultLogin');
+    resultLogin.innerHTML = "Processing...";
 
     const email = document.getElementById('signin_email').value;
-    const passwd = document.getElementById('signin_password').value;
+    const password = document.getElementById('signin_password').value;
     const options = {
       method: 'POST',
-      body: JSON.stringify({ email, passwd }),
+      body: JSON.stringify({ email, password }),
       headers: new Headers({ 'Content-Type': 'application/json' })
     }
   
@@ -53,28 +53,28 @@ const signInHimesh = (e) => {
       .then(res => res.json())
       .then (({ authResponse }) => {
         if (!authResponse) {
-          resultLoginHimesh.innerHTML = 'No response!? Error msg: ' + err.message;
+          resultLogin.innerHTML = 'No response!? Error msg: ' + err.message;
         } else {
           if (authResponse.resultCode === 0) {
-            resultLoginHimesh.innerHTML = "Result: You're signed in. Welcome!";
+            resultLogin.innerHTML = "Result: You're signed in. Welcome!";
           } else {
-            resultLoginHimesh.innerHTML = "Result: Invalid username or password.";
+            resultLogin.innerHTML = "Result: Invalid username or password.";
           }
         }
       })
       .catch(err => {
         console.log(err);
-        resultLoginHimesh.innerHTML = 'Eina! Error msg: ' + err.message;
+        resultLogin.innerHTML = 'Eina! Error msg: ' + err.message;
       })
   }
 
-document.getElementById('submitLoginHimesh').addEventListener('click', signInHimesh);
+document.getElementById('submitLogin').addEventListener('click', signIn);
 
-const validateHimeshsToken = (e) => {
+const validateToken = (e) => {
     e.preventDefault();
     
-    const resultValidateHimeshsToken = document.getElementById('resultValidateHimeshsToken');
-    resultValidateHimeshsToken.innerHTML = "Processing...";
+    const resultValidateToken = document.getElementById('resultValidateToken');
+    resultValidateToken.innerHTML = "Processing...";
 
     const token = document.getElementById('validatetoken_token').value;
     const options = {
@@ -87,19 +87,19 @@ const validateHimeshsToken = (e) => {
       .then(res => res.json())
       .then (({ authResponse }) => {
         if (!authResponse) {
-          resultValidateHimeshsToken.innerHTML = 'No response!? Error msg: ' + err.message;
+          resultValidateToken.innerHTML = 'No response!? Error msg: ' + err.message;
         } else {
           if (authResponse.resultCode === 0) {
-            resultValidateHimeshsToken.innerHTML = "Result: Token is valid.";
+            resultValidateToken.innerHTML = "Result: Token is valid.";
           } else {
-            resultValidateHimeshsToken.innerHTML = "Result: Token is invalid.";
+            resultValidateToken.innerHTML = "Result: Token is invalid.";
           }
         }
       })
       .catch(err => {
         console.log(err);
-        resultValidateHimeshsToken.innerHTML = 'Eina! Error msg: ' + err.message;
+        resultValidateToken.innerHTML = 'Eina! Error msg: ' + err.message;
       })
   }
 
-document.getElementById('submitValidateHimeshToken').addEventListener('click', validateHimeshsToken);
+document.getElementById('submitValidateToken').addEventListener('click', validateToken);

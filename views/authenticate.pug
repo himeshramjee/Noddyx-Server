@@ -11,50 +11,50 @@ head
     .card
       .card-body
         h5.card-title Register
-        p.card-text AWS Cognito - Register user &apos;himesh&apos;
+        p.card-text AWS Cognito - Register a profile
         form#registerUserForm
           .form-group
             label(for='register_name') Name
-            input#register_name.form-control(autocomplete='name', value='Himesh')
+            input#register_name.form-control(autocomplete='name')
             label(for='register_name') Family name
-            input#register_familyName.form-control(autocomplete='family_name', value='Ramjee')
+            input#register_familyName.form-control(autocomplete='family_name')
           .form-group
             label(for='register_email') Email address
-            input#register_email.form-control(autocomplete='email', type='email', inputmode='email', value='himesh@ramjee.co.za')
-          // .form-group  
+            input#register_email.form-control(autocomplete='email', type='email', inputmode='email')
+          .form-group  
             label(for='register_password') Password
-            input#register_password.form-control(type='password', value='P@ssw0rd017')
-          button#submitRegisterHimesh.btn.btn-primary(type='submit') Register Himesh
+            input#register_password.form-control(type='password')
+          button#submitRegister.btn.btn-primary(type='submit') Register
     .card-footer
-      small#resultRegisterHimesh.text-muted Result: Pending...hit the button!
+      small#resultRegister.text-muted Result: Pending...hit the button!
   .col-sm-3
     .card
       .card-body
-        h5.card-title Login
-        p.card-text AWS Cognito - Log in user &apos;himesh&apos;
+        h5.card-title Sign In
+        p.card-text AWS Cognito - Sign In
         form#signInUserForm
           .form-group
             label(for='signin_email') Email address
-            input#signin_email.form-control(autocomplete='email', type='email', inputmode='email', value='himesh@ramjee.co.za')
+            input#signin_email.form-control(autocomplete='email', type='email', inputmode='email')
           .form-group 
             label(for='signin_password') Password
-            input#signin_password.form-control(type='password', value='P@ssw0rd017')
-          button#submitLoginHimesh.btn.btn-primary(type='submit') Sign In as Himesh
+            input#signin_password.form-control(type='password')
+          button#submitLogin.btn.btn-primary(type='submit') Sign In
     .card-footer
-      small#resultLoginHimesh.text-muted Result: Pending...hit the button!
+      small#resultLogin.text-muted Result: Pending...hit the button!
   .col-sm-3
     .card
       .card-body
-        h5.card-title Validate Himesh&apos;s Token
-        p.card-text AWS Cognito - Validate token for user &apos;himesh&apos;
+        h5.card-title Validate Token
+        p.card-text AWS Cognito - Validate an access token
         form#validateUserTokenForm
           .form-group
             label(for='validatetoken_token') Token value
             input#validatetoken_token.form-control(aria-describedby='tokenHelp')
             small#tokenHelp.form-text.text-muted e.g. 123abc
-          button#submitValidateHimeshToken.btn.btn-primary(type='submit') Validate Token
+          button#submitValidateToken.btn.btn-primary(type='submit') Validate Token
     .card-footer
-      small#resultValidateHimeshsToken.text-muted Result: Pending..hit the button!
+      small#resultValidateToken.text-muted Result: Pending..hit the button!
 
 // jQuery first, then Popper.js, then Bootstrap JS
 script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
