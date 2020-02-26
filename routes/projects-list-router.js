@@ -6,7 +6,7 @@ var path = require('path');
 router.get('/', function(req, res, next) {
     // console.log("\tIndex Router GET...");
     // res.sendFile(path.join(__dirname, '../public/index.html'));
-    res.render('index');
+    res.render('projects-list');
 });
 
 module.exports = router;

@@ -12,16 +12,19 @@ app.use(express.json()); // for parsing application/json
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+// app.use('/', express.static(path.join(__dirname, 'public')));
+
 var signInRouter = require('./routes/sign-in-router');
 app.use('/sign-in', signInRouter);
+app.use('/sign-in', express.static(path.join(__dirname, 'public')));
 
 var authRouter = require('./routes/authentication-router');
-app.use('/auth', authRouter);
+app.use('/cognito', authRouter);
+app.use('/cognito', express.static(path.join(__dirname, 'public')));
 
-var indexRouter = require('./routes/index-router');
-app.use('/', indexRouter);
-
-app.use(express.static(path.join(__dirname, 'public')));
+var projectsListRouter = require('./routes/projects-list-router');
+app.use('/projects', projectsListRouter);
+app.use('/projects', express.static(path.join(__dirname, 'public')));
 
 app.listen(process.env.port).on('listening', () => {
   console.log();
