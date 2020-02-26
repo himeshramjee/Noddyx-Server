@@ -14,7 +14,7 @@ const register = (e) => {
       headers: new Headers({ 'Content-Type': 'application/json' })
     }
 
-    fetch('/auth/register', options)
+    fetch('/cognito/register', options)
       .then(res => res.json())
       .then (({ authResponse }) => {
         if (!authResponse) {
@@ -49,7 +49,7 @@ const signIn = (e) => {
       headers: new Headers({ 'Content-Type': 'application/json' })
     }
   
-    fetch('/auth/login', options)
+    fetch('/cognito/login', options)
       .then(res => res.json())
       .then (({ authResponse }) => {
         if (!authResponse) {
@@ -83,7 +83,7 @@ const validateToken = (e) => {
       headers: new Headers({ 'Content-Type': 'application/json' })
     }
 
-    fetch('/auth/validate', options)
+    fetch('/cognito/validate', options)
       .then(res => res.json())
       .then (({ authResponse }) => {
         if (!authResponse) {

@@ -12,7 +12,7 @@ const authenticateUser = (e) => {
 
   const divSignInError = document.getElementById('divSignInError');
 
-  fetch('/sign-in', options)
+  fetch('/sign-in/sign-in', options)
     .then(res => res.json())
     .then (({ authResponse }) => {
       if (!authResponse) {
