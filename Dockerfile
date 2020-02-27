@@ -21,6 +21,8 @@ RUN npm install
 
 COPY --chown=node:node . .
 
+# RUN npm cache clean
+
 # TODO: This doesn't actually publish but just documents intent :S.
 # EXPOSE 8002
 
