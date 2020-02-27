@@ -26,10 +26,15 @@ var projectsListRouter = require('./routes/projects-list-router');
 app.use('/projects', projectsListRouter);
 app.use('/projects', express.static(path.join(__dirname, 'public')));
 
-app.listen(process.env.port).on('listening', () => {
+var aboutHimeshRouter = require('./routes/about-himesh-router');
+app.use('/about-himesh', aboutHimeshRouter);
+app.use('/about-himesh', express.static(path.join(__dirname, 'public')));
+
+app.on('listening', () => {
   console.log();
   console.log('🚀 Noddyx Server is up!!');
   console.log();
 });
+
 
 module.exports = app;
