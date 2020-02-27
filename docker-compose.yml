@@ -3,14 +3,15 @@ version: "3"
 services:
 
   nxs:
-    # image: node:12.3-alpine
     build: "."
-    # command: sh -c "npm start"
+    # image: node:12.3-alpine
+    # command: sh -c "npm install && npm start"
     environment:
       - NODE_ENV=development
       - PORT=8002
     ports:
       - "8002:8002"
-    # working_dir: /home/node/app
-    # volumes:
-    #  - ./:/home/node/app:cached
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app:cached
+    
