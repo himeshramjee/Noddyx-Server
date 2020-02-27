@@ -1,0 +1,54 @@
+.content {
+    margin-left: 10%;
+    width: 90%;
+}
+
+.content-subhead {
+	text-transform: uppercase;
+	color: #aaa;
+	border-bottom: 1px solid #eee;
+	padding: 0.4em 0;
+	font-size: 80%;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	margin-left: 5%;
+}
+
+a {
+	color: #aaa;
+}
+
+p {
+    line-height: 30px;
+    font-size: 110%;
+    text-align: left;
+}
+
+.tag-cloud-item {
+	margin: 0 0.1em;
+	padding: 0.3em 1em;
+	color: #fff;
+	background: #999;
+    font-size: 80%;
+    text-decoration: none;
+}
+
+.tag-cloud-orange {
+	background: #ffa500;
+}
+
+.tag-cloud-red {
+	background: #df2d4f;
+}
+
+.tag-cloud-blue {
+	background: #4d85d1;
+}
+
+.tag-cloud-green {
+	background: #5aba59;
+}
+
+.tag-cloud-purple {
+	background: #8156a7;
+}
