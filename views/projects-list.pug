@@ -9,76 +9,106 @@ head
   link(rel='stylesheet' href='./cognito/css/projects-list.css')
 nav.navbar.navbar-dark.bg-dark
   a.navbar-brand(href='#') .h | Tech Projects, Ideas, Knowledge
-.content
-  h1 Projects
-  #div-active-projects-list
-    ol#projects-list
-      li
-        | Freedom Coin - Exploring blockchains
-        a(href='https://github.com/himeshramjee/FreedomCoin' target='_blank') (GitHub - here be dragons and dirty python code)
-      li
-        | Arduino Park distance sensor -
-        | This was a fun little project. Arduino based range sensor to help my wife and I park her bear (Toyota Bakkie) in our now tiny garage!
-      li
-        a(href='https://github.com/himeshramjee/Aspects-of-Architecture' target='_blank') Aspects of Architecture (GitHub)
-      li
-        a(href='http://52.18.120.222/node-nlp/' target='_blank') NodeJS and Sentiment Analysis with the Natural module
-        a(href='https://github.com/himeshramjee/Node-NLP' target='_blank') (GitHub)
-      li
-        | Migrate ramjee.co.za from Afrihost to AWS
-        a(href='http://co.za/cgi-bin/whois.sh?Domain=ramjee.co.za' target='_blank') (Whois)
-      li
-        a(href='https://himesh.ramjee.co.za/about-me.html' target='_blank') About me
-        a(href='https://github.com/himeshramjee/PersonalWebsite' target='_blank') (GitHub)
-  h1 Other stuff I'd like to learn about and/or build
-  #div-idea-projects-list
-    ol#projects-list
-      li
-        | Rooms Booking system - a private space for any consulation/treatment
-        p
-          | Generic application used by individuals to internally to manage client bookings. Basic features include configuring available Rooms and creating bookings to manage each day.
-          | On demand reporting allows for easier administration and projections.
-      li
-        | Community Gardening 
-        p
-          | Born out of my lack of knowledge around landscaping and maintaining a garden.
-          | This is a portal and app for neighbourhoods to sign up and drive community wide gardening.
-          | This will include integration with smart devices that for example can help track rainfall, level of sunshine.
-          | These would feed into the portal and individual garden profiles.
-          | Gardeners can then leverage the community to make informed decisions on building and maintaining their gardens.
-          | Gardens can opt-in to growing food to support the surrounding communities.
-      li
-        | Who's free? 
-        p
-          | App that helps small groups of people (like our LiveLifeCT group!) get together more often.
-          | Specifically around making the coordination and planning around it stress free.
-      li
-        | Open Street Maps
-        p
-          | Curious to play with this framework and compare with Google Maps. 
-          | Check out 
-          a(href='https://switch2osm.org/why-switch/' target='_blank') Switch to OSM
-      li
-        | R(eactive)Socket - service to service communications binary protocol (
-        a(href='https://rsocket.io/' target='_blank') rsocket.io)
-        p
-          | Never heard of this before, looks really interesting (e.g. backpressure solution is built in). My gut tells me I'll be using this framework someday soon (probably in the IoT world).
-      li
-        | Garage Sale App
-        p
-          | Simple app to help sell your stuff. Inventory/Item management, payments integration, item bid/reservation, viewing appointment scheduling and announcements. Virtual or not.
-      li
-        | Teach Alexa about load-shedding shedules
-        p
-          | Living in South Africa, we're painfully aware of living with water and electricity constraints.
-          | For electricity, there are various mobile apps that provide us with the schedule that is published by the main provider, Eskom.
-          | Alexa doesn't have that skill right now so this is a great option for me to to dig into Alexa skills.
-      li
-        | Kotlin
-        p
-          | 'cos I gotta put something recognizable on my resume! hehe, nah. I've heard some great things about Kotlin and developer productivity (e.g. promises to be way more succint than Java).
-          | It seems like the language is evolving much faster than Java too.
+h5.content-subhead Past projects
+#div-active-projects-list.content.card-columns
+  .card
+    // img(src="./projects/favicon.ico" class="card-img-top" alt="Project 1")
+    .card-body
+      h5.card-title Freedom Coin - Exploring blockchains
+      p.card-text Here be dragons and dirty python code that I wrote to learn how to automate the build and management of masternodes.
+      a(href="https://github.com/himeshramjee/FreedomCoin" class="btn btn-primary") GitHub
+  .card
+    // img(src="./projects/favicon.ico" class="card-img-top" alt="Project 2")
+    .card-body
+      h5.card-title Arduino - Range Sensor
+      p.card-text This was a fun little project. Arduino based range sensor to help my wife and I park her bear (Toyota Bakkie) in our now tiny garage!
+  .card
+    // img(src="./projects/favicon.ico" class="card-img-top" alt="Project 3")
+    .card-body
+      h5.card-title Aspects of Architecture
+      p.card-text Some notes about various architecture topics that I may blog about in future. For now it's just notes around evaluating system platforms.
+      a(href="https://github.com/himeshramjee/Aspects-of-Architecture" class="btn btn-primary") GitHub
+  .card
+    // img(src="./projects/favicon.ico" class="card-img-top" alt="Project 4")
+    .card-body
+      h5.card-title NodeJS and very basic Sentiment Analysis
+      p.card-text This was the first tutorial I completed in starting to learn NodeJs. Very basic but functional.
+      a(href="http://52.18.120.222/node-nlp/" class="btn btn-primary") Demo
+      a(href="https://github.com/himeshramjee/Node-NLP" class="btn btn-primary") GitHub
+  .card
+    // img(src="./projects/favicon.ico" class="card-img-top" alt="Project 5")
+    .card-body
+      h5.card-title Migrate ramjee.co.za from Afrihost to AWS
+      p.card-text This was really fun. Lots of firsts coming from this project in terms of actually learning about other AWS services.
+  .card
+    // img(src="./projects/favicon.ico" class="card-img-top" alt="Project 6")
+    .card-body
+      h5.card-title About me 
+      p.card-text First personal blog page. I use it to refresh on basic UI 
+      a(href="https://himesh.ramjee.co.za/about-himesh'" class="btn btn-primary") Meet me
+      | 
+      a(href='https://github.com/himeshramjee/PersonalWebsite' class="btn btn-primary") GitHub
 
+h5.content-subhead Things I want to learn and build
+#div-idea-projects-list.content.card-columns
+  .card
+    // img(src="./projects/favicon.ico" class="card-img-top" alt="Project 1")
+    .card-body
+      h5.card-title Rooms Booking system
+      p.card-text Simple bookings app/site that helps with scheduling visitors, tracking occupancy etc.
+  .card
+    // img(src="./projects/favicon.ico" class="card-img-top" alt="Project 2")
+    .card-body
+      h5.card-title Community Gardening 
+      .card-text
+        p.
+          Born out of my lack of knowledge around landscaping and maintaining a garden.
+          This is a portal and app for neighbourhoods to sign up and drive community wide gardening.
+          This will include integration with smart devices that for example can help track rainfall, level of sunshine.
+          These would feed into the portal and individual garden profiles.
+          Gardeners can then leverage the community to make informed decisions on building and maintaining their gardens.
+          Gardens can opt-in to growing food to support the surrounding communities.
+  .card
+    // img(src="./projects/favicon.ico" class="card-img-top" alt="Project 3")
+    .card-body
+      h5.card-title Who's free? 
+      .card-text
+        p.
+          App that helps small groups of people (like our LiveLifeCT group!) get together more often.
+  .card
+    // img(src="./projects/favicon.ico" class="card-img-top" alt="Project 4")
+    .card-body
+      h5.card-title Open Street Maps
+      p.card-text Curious to play with this framework and compare with Google Maps.
+      a(href='https://switch2osm.org/why-switch/' target='_blank' class="btn btn-primary") switch2osm.org
+  .card
+    // img(src="./projects/favicon.ico" class="card-img-top" alt="Project 5")
+    .card-body
+      h5.card-title R(eactive)Socket - service to service communications binary protocol
+      p.card-text Never heard of this before, looks really interesting (e.g. backpressure solution is built in). My gut tells me I'll be using this framework someday soon (probably in the IoT world).
+      a(href='https://rsocket.io/' target='_blank' class="btn btn-primary") rsocket.io
+  .card
+    // img(src="./projects/favicon.ico" class="card-img-top" alt="Project 6")
+    .card-body
+      h5.card-title Garage Sale App
+      p.card-text Simple app to help sell your stuff. Inventory/Item management, payments integration, item bid/reservation, viewing appointment scheduling and announcements. Virtual or not.
+  .card
+    // img(src="./projects/favicon.ico" class="card-img-top" alt="Project 6")
+    .card-body
+      h5.card-title Alexa skills - Eskom load-shedding shedules
+      .card-text
+        p.
+          Living in South Africa, we're painfully aware of living with water and electricity constraints.
+          For electricity, there are various mobile apps that provide us with the schedule that is published by the main provider, Eskom.
+          Alexa doesn't have that skill right now so this is a great option for me to to dig into Alexa skills.
+  .card
+    // img(src="./projects/favicon.ico" class="card-img-top" alt="Project 6")
+    .card-body
+      h5.card-title Kotlin
+      .card-text
+        p.
+          I gotta put something recognizable on my resume! hehe, nah. I've heard some great things about Kotlin and developer productivity (e.g. promises to be way more succint than Java).
+          It seems like the language is evolving much faster than Java too.
 
 // jQuery first, then Popper.js, then Bootstrap JS
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
