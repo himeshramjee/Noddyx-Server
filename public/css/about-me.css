@@ -24,31 +24,31 @@ p {
     text-align: left;
 }
 
-.tag-cloud-item {
+a.tag-cloud-item {
 	margin: 0 0.1em;
-	padding: 0.3em 1em;
-	color: #fff;
+	padding: 0.1em 1em;
 	background: #999;
+	color: aliceblue;
     font-size: 80%;
     text-decoration: none;
 }
 
-.tag-cloud-orange {
+a.tag-cloud-orange {
 	background: #ffa500;
 }
 
-.tag-cloud-red {
+a.tag-cloud-red {
 	background: #df2d4f;
 }
 
-.tag-cloud-blue {
+a.tag-cloud-blue {
 	background: #4d85d1;
 }
 
-.tag-cloud-green {
-	background: #5aba59;
+a.tag-cloud-green {
+	background: #5aba59
 }
 
-.tag-cloud-purple {
+a.tag-cloud-purple {
 	background: #8156a7;
 }

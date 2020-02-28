@@ -1,73 +1,87 @@
 doctype html
 head
   meta(charset='utf-8')
-  title Explore: Noddyx Index
+  title Explore: Tech builder
   link(rel="shortcut icon" type="image/x-icon" href="./projects/favicon.ico")
-h1 Projects
-#div-active-projects-list
-  ol#projects-list
-    li
-      | Freedom Coin - Exploring blockchains
-      a(href='https://github.com/himeshramjee/FreedomCoin' target='_blank') (GitHub - here be dragons and dirty python code)
-    li
-      | Arduino Park distance sensor -
-      | This was a fun little project. Arduino based range sensor to help my wife and I park her bear (Toyota Bakkie) in our now tiny garage!
-    li
-      a(href='https://github.com/himeshramjee/Aspects-of-Architecture' target='_blank') Aspects of Architecture (GitHub)
-    li
-      a(href='http://52.18.120.222/node-nlp/' target='_blank') NodeJS and Sentiment Analysis with the Natural module
-      a(href='https://github.com/himeshramjee/Node-NLP' target='_blank') (GitHub)
-    li
-      | Migrate ramjee.co.za from Afrihost to AWS
-      a(href='http://co.za/cgi-bin/whois.sh?Domain=ramjee.co.za' target='_blank') (Whois)
-    li
-      a(href='https://himesh.ramjee.co.za/about-me.html' target='_blank') About me
-      a(href='https://github.com/himeshramjee/PersonalWebsite' target='_blank') (GitHub)
-h1 Other stuff I&apos;d like to learn about and/or build
-#div-idea-projects-list
-  ol#projects-list
-    li
-      | Rooms Booking system - a private space for any consulation/treatment
-      p
-        | Generic application used by individuals to internally to manage client bookings. Basic features include configuring available Rooms and creating bookings to manage each day.
-        | On demand reporting allows for easier administration and projections.
-    li
-      | Community Gardening 
-      p
-        | Born out of my lack of knowledge around landscaping and maintaining a garden.
-        | This is a portal and app for neighbourhoods to sign up and drive community wide gardening.
-        | This will include integration with smart devices that for example can help track rainfall, level of sunshine.
-        | These would feed into the portal and individual garden profiles.
-        | Gardeners can then leverage the community to make informed decisions on building and maintaining their gardens.
-        | Gardens can opt-in to growing food to support the surrounding communities.
-    li
-      | Who&apos;s free? 
-      p
-        | App that helps small groups of people (like our LiveLifeCT group!) get together more often.
-        | Specifically around making the coordination and planning around it stress free.
-    li
-      | Open Street Maps
-      p
-        | Curious to play with this framework and compare with Google Maps. 
-        | Check out 
-        a(href='https://switch2osm.org/why-switch/' target='_blank') Switch to OSM
-    li
-      | R(eactive)Socket - service to service communications binary protocol (
-      a(href='https://rsocket.io/' target='_blank') rsocket.io)
-      p
-        | Never heard of this before, looks really interesting (e.g. backpressure solution is built in). My gut tells me I'll be using this framework someday soon (probably in the IoT world).
-    li
-      | Garage Sale App
-      p
-        | Simple app to help sell your stuff. Inventory/Item management, payments integration, item bid/reservation, viewing appointment scheduling and announcements. Virtual or not.
-    li
-      | Teach Alexa about load-shedding shedules
-      p
-        | Living in South Africa, we&apos;re painfully aware of living with water and electricity constraints.
-        | For electricity, there are various mobile apps that provide us with the schedule that is published by the main provider, Eskom.
-        | Alexa doesn&apos;t have that skill right now so this is a great option for me to to dig into Alexa skills.
-    li
-      | Kotlin
-      p
-        | &apos;cos I gotta put something recognizable on my resume! hehe, nah. I&apos;ve heard some great things about Kotlin and developer productivity (e.g. promises to be way more succint than Java).
-        | It seems like the language is evolving much faster than Java too.
+  // Bootstrap CSS
+  link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css", integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh", crossorigin="anonymous")
+  // App css
+  link(rel='stylesheet' href='./cognito/css/projects-list.css')
+nav.navbar.navbar-dark.bg-dark
+  a.navbar-brand(href='#') .h | Tech Projects, Ideas, Knowledge
+.content
+  h1 Projects
+  #div-active-projects-list
+    ol#projects-list
+      li
+        | Freedom Coin - Exploring blockchains
+        a(href='https://github.com/himeshramjee/FreedomCoin' target='_blank') (GitHub - here be dragons and dirty python code)
+      li
+        | Arduino Park distance sensor -
+        | This was a fun little project. Arduino based range sensor to help my wife and I park her bear (Toyota Bakkie) in our now tiny garage!
+      li
+        a(href='https://github.com/himeshramjee/Aspects-of-Architecture' target='_blank') Aspects of Architecture (GitHub)
+      li
+        a(href='http://52.18.120.222/node-nlp/' target='_blank') NodeJS and Sentiment Analysis with the Natural module
+        a(href='https://github.com/himeshramjee/Node-NLP' target='_blank') (GitHub)
+      li
+        | Migrate ramjee.co.za from Afrihost to AWS
+        a(href='http://co.za/cgi-bin/whois.sh?Domain=ramjee.co.za' target='_blank') (Whois)
+      li
+        a(href='https://himesh.ramjee.co.za/about-me.html' target='_blank') About me
+        a(href='https://github.com/himeshramjee/PersonalWebsite' target='_blank') (GitHub)
+  h1 Other stuff I'd like to learn about and/or build
+  #div-idea-projects-list
+    ol#projects-list
+      li
+        | Rooms Booking system - a private space for any consulation/treatment
+        p
+          | Generic application used by individuals to internally to manage client bookings. Basic features include configuring available Rooms and creating bookings to manage each day.
+          | On demand reporting allows for easier administration and projections.
+      li
+        | Community Gardening 
+        p
+          | Born out of my lack of knowledge around landscaping and maintaining a garden.
+          | This is a portal and app for neighbourhoods to sign up and drive community wide gardening.
+          | This will include integration with smart devices that for example can help track rainfall, level of sunshine.
+          | These would feed into the portal and individual garden profiles.
+          | Gardeners can then leverage the community to make informed decisions on building and maintaining their gardens.
+          | Gardens can opt-in to growing food to support the surrounding communities.
+      li
+        | Who's free? 
+        p
+          | App that helps small groups of people (like our LiveLifeCT group!) get together more often.
+          | Specifically around making the coordination and planning around it stress free.
+      li
+        | Open Street Maps
+        p
+          | Curious to play with this framework and compare with Google Maps. 
+          | Check out 
+          a(href='https://switch2osm.org/why-switch/' target='_blank') Switch to OSM
+      li
+        | R(eactive)Socket - service to service communications binary protocol (
+        a(href='https://rsocket.io/' target='_blank') rsocket.io)
+        p
+          | Never heard of this before, looks really interesting (e.g. backpressure solution is built in). My gut tells me I'll be using this framework someday soon (probably in the IoT world).
+      li
+        | Garage Sale App
+        p
+          | Simple app to help sell your stuff. Inventory/Item management, payments integration, item bid/reservation, viewing appointment scheduling and announcements. Virtual or not.
+      li
+        | Teach Alexa about load-shedding shedules
+        p
+          | Living in South Africa, we're painfully aware of living with water and electricity constraints.
+          | For electricity, there are various mobile apps that provide us with the schedule that is published by the main provider, Eskom.
+          | Alexa doesn't have that skill right now so this is a great option for me to to dig into Alexa skills.
+      li
+        | Kotlin
+        p
+          | 'cos I gotta put something recognizable on my resume! hehe, nah. I've heard some great things about Kotlin and developer productivity (e.g. promises to be way more succint than Java).
+          | It seems like the language is evolving much faster than Java too.
+
+
+// jQuery first, then Popper.js, then Bootstrap JS
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+// script(type='text/javascript' src='./bio/js/projects-list.js')
