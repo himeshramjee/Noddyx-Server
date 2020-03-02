@@ -49,6 +49,18 @@ h5.content-subhead Past projects
       a(href="https://himesh.ramjee.co.za/about-himesh" target="_blank" class="btn btn-primary") Meet me
       | 
       a(href='https://github.com/himeshramjee/PersonalWebsite' target="_blank" class="btn btn-primary") GitHub
+  .card
+    // img(src="./projects/favicon.ico" class="card-img-top" alt="Project 6")
+    .card-body
+      h5.card-title Move ramjee.co.za certs to new CA
+      .card-text 
+        p.
+          I'd previously used AWS Certificate Manager which offers free SSL certs if your using AWS services.
+          But that has the added constraint of only using AWS ELBs which aren't cheap (~R300 per month or 18usd).
+          So I've moved over to LetsEncrypt using CertBot and terminiated on my Nginx server running on an AWS Lightsail instance.
+        a(href='https://letsencrypt.org/' target="_blank" class="btn btn-primary") letsencrypt.org
+        | 
+        a(href='https://github.com/himeshramjee/Noddyx-Server/blob/cb4a97cea726e94ffa9fdf9351b339743c808eea/nginx-notes/sites-enabled-noddyx-server.conf#L1-L23' target="_blank" class="btn btn-primary") View basic config
 
 h5.content-subhead Things I want to learn and build
 #div-idea-projects-list.content.card-columns
