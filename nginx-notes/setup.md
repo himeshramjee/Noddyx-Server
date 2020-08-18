@@ -27,6 +27,7 @@ didn't follow through on exploring that idea due to the associated costs. I reca
    1. Test auto-renewal (only works if you used autoconfig method above)
       `sudo certbot renew --dry-run`
    1. Update the default ssl_ciphers list to `ssl_ciphers HIGH:!aNULL:!MD5;`. Doing this resolved the handshake error noting there wasn't an overlap in client and server supported ciphers for a successful handshake.
+   1. Renewal command using DNS for auth: `sudo certbot -d ramjee.co.za -d *.ramjee.co.za --manual --preferred-challenges dns certonly`
 1. Install Docker
    1. `curl -fsSL https://get.docker.com -o get-docker.sh`
    1. `sudo apt-get install -y docker-compose`
