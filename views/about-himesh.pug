@@ -17,7 +17,7 @@ nav.navbar.navbar-dark.bg-dark
         a.tag-cloud-item.tag-cloud-orange Himesh Ramjee 
         a.tag-cloud-item.tag-cloud-red Software Development
         p.
-          I am a 37 year old man living in Cape Town, South Africa. I've got around 13 years of 
+          I am a 38 year old dude living in Cape Town, South Africa. I've got around 13 years of 
           experience in the tech industry. Majority of my time as a Software Engineer (incl. Tech Lead and
           Solutions Architect roles) was spent in the online retail space. I recently left my day job at Amazon Web 
           Services after spending 4 years there as a Software Development Manager. I gained a massive amount of 
@@ -63,7 +63,7 @@ nav.navbar.navbar-dark.bg-dark
 
     h5.content-subhead What can I offer?
     #div-my-skills.content
-      h2 Technology and Architecture Management
+      h2(id="heading-offer-tech-management") Technology and Architecture Management
       div-tag-cloud-offer-tech 
         a.tag-cloud-item.tag-cloud-blue Enterprise Architecture
         a.tag-cloud-item.tag-cloud-blue Monolith vs Micro services
@@ -89,7 +89,7 @@ nav.navbar.navbar-dark.bg-dark
         parts of my day job but getting to write some code was a challenge in the SDM role. Being able to write 
         scripts was something I always looked out for.
 
-      h2 People Management
+      h2(id="heading-offer-people-management") People Management
       div-tag-cloud-offer-people  
         a.tag-cloud-item.tag-cloud-green Hiring
         a.tag-cloud-item.tag-cloud-green Goal setting
@@ -109,7 +109,7 @@ nav.navbar.navbar-dark.bg-dark
         organizations and leadership when required. Help individual team members develop and drive their career 
         goals by providing relevant context and helping identify and measure specific opportunities. 
 
-      h2 Software Development Management
+      h2(id="heading-offer-software-management") Software Development Management
       div-tag-cloud-offer-dev  
         a.tag-cloud-item.tag-cloud-purple Operations Planning (OP1)
         a.tag-cloud-item.tag-cloud-purple Product Roadmaps
@@ -126,7 +126,7 @@ nav.navbar.navbar-dark.bg-dark
         development work (typically in some form of Scrum Agile or Kanban development approach). Help define key system 
         and customer metrics along with SLA’s that help track the overall health of systems and provide input into decision making.
       
-      h2 Rebooting my SDE skills
+      h2(id="heading-offer-engineer") Rebooting my SDE skills
       div-tag-cloud-sde-reboot
         a.tag-cloud-item.tag-cloud-orange Java
         a.tag-cloud-item.tag-cloud-orange NodeJS
@@ -137,15 +137,11 @@ nav.navbar.navbar-dark.bg-dark
         a.tag-cloud-item.tag-cloud-orange AWS Certificate Manager
         a.tag-cloud-item.tag-cloud-orange AWS Workmail
         a.tag-cloud-item.tag-cloud-orange AWS Cognito
-      p.
-        Since taking a sabatical from work, I've started a number of side projects that keep me in my happy space! 
-        I run some personal projects that help me explore new tech or get up to speed with emerging/newer industry standards. 
-        They are not always active as the DIY enthusiast in me also runs various home improvement projects that are not software 
-        related. Thus far I have learned about Container technologies like Docker, JavaScript frameworks like NodeJS together 
-        with Express and Pug JS. I have also dabbled with Natural Language processing and am looking to unpack TensorFlow at some 
-        point. In 2020 I migrated my personal domain and email service from a local provider to Amazon AWS. I am currently building 
-        an auto trading robot that is written in MQL5 and runs on the MetaTrader 5 Platform. 
-        If you're interested, you can take a look at the list a(href="https://himesh.ramjee.co.za/projects" target="_blank") here.
+      p
+        | Since taking a sabatical from work, I've started a number of side projects that keep me in my happy space! 
+        | I run some personal projects that help me explore new tech or get up to speed with emerging/newer industry standards. They are not always active as the DIY enthusiast in me also runs various home improvement projects that are not software related. Thus far I have learned about Container technologies like Docker, JavaScript frameworks like NodeJS together with Express and Pug JS. I have also dabbled with Natural Language processing and am looking to unpack TensorFlow at some point. In 2020 I migrated my personal domain and email service from a local provider to Amazon AWS. I am currently building an auto trading robot that is written in MQL5 and runs on the MetaTrader 5 Platform. If you're interested, you can take a look at the list 
+        a(href="https://himesh.ramjee.co.za/projects" target="_blank") here
+        | .
 
     h5.content-subhead My journey thus far.
     #div-journey-so-far.content
@@ -284,17 +280,33 @@ nav.navbar.navbar-dark.bg-dark
           a(href='#heading-whats-important' class="dropdown-item") What's important to me?
           a(href='#heading-what-am-i-doing' class="dropdown-item") What am I doing?
           a(href='#heading-whats-next' class="dropdown-item") What's next?
-
-      li.nav-item
-        a(href='#div-my-skills' class="nav-link") Acquired skills
-      li.nav-item
-        a(href='https://himesh.ramjee.co.za/projects' class="nav-link" target="_blank") Personal projects
+      li.nav-item.dropdown
+        a(href='#' class="nav-link dropdown-toggle" data-toggle="dropdown") Skills
+        .dropdown-menu
+          a(href='#heading-offer-tech-management' class="dropdown-item") Technology Management
+          a(href='#heading-offer-people-management' class="dropdown-item") People Management
+          a(href='#heading-offer-software-management' class="dropdown-item") Software Management
+          a(href='#heading-offer-engineer' class="dropdown-item") Engineering
       li.nav-item.dropdown
         a(href='#' class="nav-link dropdown-toggle" data-toggle="dropdown") My rap sheet
         .dropdown-menu
           a(href='#heading-journey-currently' class="dropdown-item") Nov 2019 to date
           a(href='#heading-journey-aws' class="dropdown-item") 2015 - 2019
           a(href='#heading-journey-kcom' class="dropdown-item") 2007 - 2015
+
+    ul.nav(id="page-menu")
+      li.nav-item
+        a(href="https://www.linkedin.com/in/himeshramjee" class="nav-link"  target="_blank") LinkedIn
+      li.nav-item.dropdown
+        a(href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" target="_blank") Download
+        .dropdown-menu
+          a(href="./projects/downloads/Himesh Ramjee - Resume.pdf" class="dropdown-item" target="_blank") Resume
+          a(href="./projects/downloads/Himesh Ramjee - Cirriculum Vitae.pdf" class="dropdown-item" target="_blank") CV
+      li.nav-item
+        a(href='#div-my-skills' class="nav-link") Acquired skills
+      li.nav-item
+        a(href='https://himesh.ramjee.co.za/projects' class="nav-link" target="_blank") Personal projects
+
 .row
   .col-md-12
     h5.content-subhead Out and about
