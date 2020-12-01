@@ -1,6 +1,7 @@
 .content {
   margin-left: 10%;
   width: 90%;
+  font-size: 85%;
 }
 
 .content-subhead {
@@ -8,7 +9,7 @@
   color: #aaa;
   border-bottom: 1px solid #eee;
   padding: 0.4em 0;
-  font-size: 80%;
+  font-size: 85%;
   font-weight: 500;
   letter-spacing: 0.1em;
   margin-left: 5%;
@@ -26,9 +27,7 @@ li > a {
 }
 
 p {
-  line-height: 30px;
-  font-size: 110%;
-  text-align: left;
+  line-height: 25px;
 }
 
 a.tag-cloud-item {
@@ -36,7 +35,6 @@ a.tag-cloud-item {
   padding: 0.1em 1em;
   background: #999;
   color: aliceblue;
-  font-size: 80%;
   text-decoration: none;
 }
 
