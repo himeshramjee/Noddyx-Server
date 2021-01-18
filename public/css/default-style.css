@@ -54,6 +54,15 @@ a.tag-cloud-green {
   background: #5aba59;
 }
 
+a.tag-cloud-lightgreen {
+  background: #b2e8c2;
+  color: black;
+}
+
 a.tag-cloud-purple {
   background: #8156a7;
+}
+
+a.tag-cloud-lilac {
+  background: #c8a2c8;
 }

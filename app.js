@@ -32,7 +32,11 @@ app.use("/about-himesh", express.static(path.join(__dirname, "public")));
 
 var careerProfileHimeshRouter = require("./routes/career-profile-himesh-router");
 app.use("/career-profile", careerProfileHimeshRouter);
-app.use("/about-himesh", express.static(path.join(__dirname, "public")));
+app.use("/career-profile", express.static(path.join(__dirname, "public")));
+
+var engineeringRouter = require("./routes/engineering-router");
+app.use("/engineering", engineeringRouter);
+app.use("/engineering", express.static(path.join(__dirname, "public")));
 
 app.on("listening", () => {
   console.log();
