@@ -12,8 +12,6 @@ app.use(express.json()); // for parsing application/json
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
-// app.use('/', express.static(path.join(__dirname, 'public')));
-
 var signInRouter = require("./routes/sign-in-router");
 app.use("/sign-in", signInRouter);
 app.use("/sign-in", express.static(path.join(__dirname, "public")));
@@ -27,7 +25,9 @@ app.use("/projects", projectsListRouter);
 app.use("/projects", express.static(path.join(__dirname, "public")));
 
 var aboutHimeshRouter = require("./routes/about-himesh-router");
+app.use("/", aboutHimeshRouter);
 app.use("/about-himesh", aboutHimeshRouter);
+app.use("/", express.static(path.join(__dirname, "public")));
 app.use("/about-himesh", express.static(path.join(__dirname, "public")));
 
 var careerProfileHimeshRouter = require("./routes/career-profile-himesh-router");
